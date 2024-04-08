@@ -1,4 +1,4 @@
-# excel-edi
+# EXCEL - EDI 834 Converter
 Python program that will take in an Excel file containing healthcare enrollment data and convert into a file that is 834 EDI format compliant
 
 # TODOs
@@ -60,26 +60,49 @@ N1*75*COE CODE~
 REF*17*30~
 DTP*007*D8*20190901
 ```
+Example Excel Data:
+```
+Subscriber ID	Member ID	Name	Date of Birth 
+123456789	987654321	John Doe	01/01/1980
+123456789	987654322	Jane Doe	02/02/1990
+```
 
-# EDI Segment-Element Definitions
-- `ISA`: Interchange Control Header
-- `GS`: Functional Group Header
-- `ST`: Transaction Set Header
-- `BGN`: Beginning Segment
--` N1`: Name
-- `INS`: Insured Benefit
-- `REF`: Reference Identification
-- `DTP`: Date or Time or Period
-- `NM1`: Individual or Organizational Name
-- `PER`: Administrative Communications Contact
-- `N3`: Address Information
-- `N4`: Geographic Location
-- `DMG`: Demographic Information
-- `LUI`: Language Use
-- `HD`: Health Coverage
-- `LX`: Transaction Set Line Number
-- `COB`: Coordination of Benefits
-- `LS`: Loop Header
-- `LE`: Loop Trailer
+# EDI Loops-Segment-Element Definitions
+These segments, loops, and elements provide a structured way to exchange patient enrollment information electronically using the 834 EDI standard.
+
+### Segments
+Segments represent the basic building blocks of an EDI transaction set. 
+
+In the context of the 834 EDI standard, segments convey specific pieces of information about the enrollment process.
+
+- `ISA` (Interchange Control Header): Provides control information for the interchange, - including sender and receiver IDs, and control numbers.
+- `GS` (Functional Group Header): Indicates the beginning of a functional group of related transactions.
+- `ST` (Transaction Set Header): Identifies the start of an individual transaction set, in this case, an enrollment transaction.
+- `BGN` (Beginning Segment): Contains information about the beginning of the transaction set, such as transaction type code and reference numbers.
+- `REF` (Reference Identification): Provides reference information related to the transaction.
+- `DTP` (Date/Time Reference): Conveys date or time information related to the transaction.
+- `N1` (Name): Contains party name information, such as the name of the employer, payer, or subscriber.
+- `INS` (Subscriber Information): Provides information about the subscriber, including identification and demographic details.
+- `DMG` (Demographic Information): Contains demographic details about the subscriber, such as birth date and gender.
+- `HD` (Health Coverage): Specifies the type of health coverage being enrolled in.
+- `LX` (Transaction Set Line Number): Identifies individual occurrences of a loop within the transaction set.
+
+### Loops
+Loops are structures within the EDI standard that allow for repeating sets of segments. In the 834 EDI standard, loops are used to group related information together.
+
+- Header Loop (`Loop 2000`): Contains information related to the overall enrollment transaction, such as subscriber information and effective dates.
+- Detail Loop (`Loop 2100`): Contains detailed information about each individual enrolled member, including demographic data and coverage details.
+- Trailer Loop (`Loop 2200`): Contains summary information or totals related to the enrollment transaction.
+
+### Elements
+Elements are the individual data fields within segments. In the context of the 834 EDI standard, elements convey specific pieces of information about the enrollment process. 
+
+- **Subscriber ID**: Unique identifier for the subscriber.
+- **Member ID**: Unique identifier for each enrolled member.
+- **Name**: Subscriber or member's name.
+- **Date of Birth**: Subscriber or member's date of birth.
+- **Gender Subscriber**: or member's gender.
+- **Effective Date**: Date when coverage becomes effective.
+- **Termination Date**: Date when coverage ends.
 
 
