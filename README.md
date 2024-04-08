@@ -105,4 +105,21 @@ Elements are the individual data fields within segments. In the context of the 8
 - **Effective Date**: Date when coverage becomes effective.
 - **Termination Date**: Date when coverage ends.
 
+# Usage
+To clone and run this repository locally, follow these steps:
 
+```bash
+# Clone this repository
+$ git clone
+
+# Change into the project directory
+$ cd excel-edi
+
+# Create and activate a virtual environment
+$ python -m venv venv
+$ source venv/bin/activate
+
+# Install the required dependencies
+$ pip install -r requirements.txt
+
+```
