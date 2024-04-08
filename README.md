@@ -110,7 +110,7 @@ To clone and run this repository locally, follow these steps:
 
 ```bash
 # Clone this repository
-$ git clone
+$ git clone https://github.com/AlphonseBrandon/excel-edi.git
 
 # Change into the project directory
 $ cd excel-edi
