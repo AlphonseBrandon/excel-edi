@@ -1,0 +1,2 @@
+NM1*IL*1*Doe*John***34*123456~
+NM1*IL*1*Smith*Jane***34*789012~
