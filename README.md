@@ -2,10 +2,6 @@
 Python program that will take in an Excel file containing healthcare enrollment data and convert into a file that is 834 EDI format compliant
 
 # TODOs
-- [ ] Create sample excel sheet
-- [ ] Create sample 834 EDI file
-- [ ] Write function that will take in an Excel file and convert it into a 834 EDI file
-- [ ] Write a function that will output the converted 834 EDI file
 - [ ] Test the code with sample data
 - [ ] Write test cases for the code
 
